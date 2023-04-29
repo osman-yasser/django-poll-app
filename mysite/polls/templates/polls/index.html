@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>index</title>
+        <meta charset="UTF-8"/>
+        <meta name="description" content="This is the index page"/>
+    </head>
+    <body>
+        {% if latest_questions_list %}
+            <ul>
+                {% for question in latest_questions_list %}
+                    <li>
+                        <a href="{% url 'polls:detail' question.id %}" target="_self">{{ question.question_text }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>NO POLLS ARE AVAILABLE.</p>
+        {% endif %}
+    </body>
+</html>
