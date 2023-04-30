@@ -4,6 +4,8 @@
         <title>index</title>
         <meta charset="UTF-8"/>
         <meta name="description" content="This is the index page"/>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'polls/style.css' %}"/>
     </head>
     <body>
         {% if latest_questions_list %}
